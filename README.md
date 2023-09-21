@@ -2,7 +2,7 @@
 The package **Earth_TLM** is a full 3D code for study the electromagnetic wave propagation in planetary atmospheres. 
 Using this code, Schumann resonances can be obtained from the transient electromagnetic field.
 
-The physical system consists of two very large and concentric perfectly-conducting spheres: the Earth’s or planet surface with radius $R_1$ and the lower Ionosphere with radius $R_2$. They are filled with the atmosphere, an isotropic and inhomogeneous dielectric with low conductivity values. The system is driven by current sources which model lightning strokes. The sources present a Gaussian-shape time evolution, with important content at low frequencies, below 100 Hz in the Earth’s case. Cartesian coordinates will be used, and the system is included inside a cubic TLM mesh with a side of $2\cdot R_2$.
+The physical system is modeled as a spherical cavity formed by two very large and concentric perfectly-conducting spheres: the Earth’s or planet surface with radius $R_1$ and the lower Ionosphere with radius $R_2$. The cavity is filled with the atmosphere, an isotropic and inhomogeneous dielectric with low conductivity values. The system is driven by current sources which model lightning strokes. The sources present a Gaussian-shape time evolution, with important content at low frequencies, below 100 Hz in the Earth’s case. Cartesian coordinates will be used, and the system is included inside a cubic TLM mesh with a side of $2\cdot R_2$.
 
 **The package Earth_TLM has the following programs**:
 - ‘input_Earth_box.py’: conversion of spherical coordinates referred to the Earth’s surface to Cartesian coordinates referred to the cubic Cartesian TLM mesh. It reads the file ‘input_Earth.txt’ and writes in the file ‘input_box.txt’
