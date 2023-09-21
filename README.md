@@ -7,8 +7,8 @@ The physical system is modeled as a spherical cavity formed by two very large an
 **The package Earth_TLM has the following programs**:
 - ‘input_Earth_box.py’: conversion of spherical coordinates referred to the Earth’s surface to Cartesian coordinates referred to the cubic Cartesian TLM mesh. It reads the file ‘input_Earth.txt’ and writes in the file ‘input_box.txt’
 - ´Earth_TLM_MoiT.f95´: obtention of the electric and magnetic field at each node and time iteration. This block is parallelized using OpenMP directives. Output information is provided in two files:
-  - Voltages_box: a binary file containing voltages and currents at the parallel and series nodes of each 3D TLM output nodes, respectively. These magnitudes correspond to the electric and magnetic fields in arbitrary units.
-  - Time box: a formatted file containing the total CPU time spent in the calculation, that, in the examples presented in the paper and using a laptop with i7 processor, is about several hours.
+  - voltages_box: a binary file containing voltages and currents at the parallel and series nodes of each 3D TLM output nodes, respectively. These magnitudes correspond to the electric and magnetic fields in arbitrary units.
+  - time_box: a formatted file containing the total CPU time spent in the calculation, that, in the examples presented in the paper and using a laptop with i7 processor, is about several hours.
 
 The Jupyter notebook ‘Case_2E.ipynb’ contains the post-processing analysis of the results obtained from ´Earth_TLM_MoiT.f95´.
 
