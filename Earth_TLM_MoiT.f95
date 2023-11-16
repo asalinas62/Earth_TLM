@@ -1,7 +1,7 @@
  program Earth_TLM_MoiT
 
 !! Program for the Earth EM cavity
-!! Rev. 2023/06/15
+!! Rev. 2023/11/14
 !! English Version
 !! gfortran -o temporal -O2 -fopenmp Earth_TLM_MoiT.f95
 
@@ -61,7 +61,7 @@
  vs=0.0
  wct=0.0
 !$ nth1=OMP_get_num_threads()
-!$ wc1=omp_get_wtime()
+!!$ wc1=omp_get_wtime()    !!  Number of threads before 
 
 
 !! TEMPOROAL LOOP
@@ -73,7 +73,7 @@
 !$omp parallel private(i,ind,j,vsd,ys,campoe,aux,rescata) & 
 !$omp          firstprivate(nlp,ncr,nali,alinu,alitip,gauss,salnu)
 
-!$ nth2=OMP_get_num_threads()
+!!$ nth2=OMP_get_num_threads()  !!  Number of threads inside 
 
 !$omp do
  do i=1,ncr

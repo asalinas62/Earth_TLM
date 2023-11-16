@@ -1,13 +1,13 @@
  program Earth_TLM_main
  
 !! Program for the Earth EM cavity
-!! Rev. 2023/07/23
+!! Rev. 2023/11/14
 !! English Version
  implicit none 
  integer, parameter :: first=SELECTED_INT_KIND (10)  !! first : aux. par. integer 10^10
  real , parameter :: cluz=2.99793E8  !! clight ; pi : aux. par.
  real , parameter :: pi=3.14159265
- integer , parameter :: ncelmax=178956970    !! Number of nodes max: 2**31/nlp
+ integer , parameter :: ncelmax=178956970    !! Number of nodes max: 2**31/nlp (INTEGER*4)
  integer , parameter :: nlp=12  !! number of link lines 
  integer :: ninter  !! time intervals
  real :: ra1,ra2,dl,dt  !! Earth's radii, cell length ; time increment
@@ -417,7 +417,7 @@
         else if (zkn.ge.hkn) then
          sigma=sigmakn*exp((zkn-hkn)/psib)
         else
-         print*,'Error en la conductividad'
+         print*,'Error in conductivity '
          stop
         end if
  else if (sigmatip.eq.11) then
@@ -435,7 +435,7 @@
           else if (zkn.ge.hknn) then
             sigma=sigmakn*exp((zkn-hknn)/psibn)
           else
-            print*,'Error en la conductividad noche'
+            print*,'Error in night conductivity'
             stop
           end if
         else  
@@ -444,7 +444,7 @@
           else if (zkn.ge.hknd) then
             sigma=sigmakn*exp((zkn-hknd)/psibd)
           else
-            print*,'Error en la conductividad dia'
+            print*,'Error in day conductivity '
             stop
           end if
 
@@ -508,7 +508,7 @@
  else if (coocentro(1).gt.0.) then
            noche=.False.
  else
-           print*,'Problem in the night'
+           print*,'Problem in the night definition'
            stop
  end if
  end function noche
